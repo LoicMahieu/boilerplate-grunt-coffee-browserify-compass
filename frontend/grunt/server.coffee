@@ -3,8 +3,9 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'server', [
     'clean:server'
-    'style-server'
+    'concurrent:server'
     'connect:server'
+    'browserify:watch'
     'watch'
   ]
 
@@ -18,6 +19,12 @@ module.exports = (grunt) ->
         '{.tmp,app}/scripts/{,*/}*.js',
         'app/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
       ]
+
+  concurrent:
+    server: [
+      'style-server'
+      'src-server'
+    ]
 
   clean:
     server: ['.tmp']
