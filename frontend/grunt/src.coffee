@@ -1,6 +1,7 @@
 
 module.exports = (grunt) ->
   grunt.registerTask 'src-server', ['coffeelint']
+  grunt.registerTask 'src-dist', ['coffeelint', 'browserify:app']
 
   watch:
     coffee:

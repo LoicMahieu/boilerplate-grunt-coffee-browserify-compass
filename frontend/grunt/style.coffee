@@ -1,7 +1,8 @@
 
 module.exports = (grunt) ->
 
-  grunt.registerTask 'style-server', ['compass:server', 'autoprefixer:server']
+  grunt.registerTask 'style-server', ['compass:server', 'autoprefixer:style']
+  grunt.registerTask 'style-dist', ['compass:dist', 'autoprefixer:style']
 
   watch:
     style:
@@ -16,7 +17,6 @@ module.exports = (grunt) ->
       imagesDir: 'app/images'
       javascriptsDir: 'app/scripts'
       fontsDir: 'app/styles/fonts'
-      importPath: 'app/bower_components'
       httpImagesPath: '../images'
       httpGeneratedImagesPath: '../images/generated'
       httpFontsPath: '../styles/fonts'
@@ -30,5 +30,7 @@ module.exports = (grunt) ->
         debugInfo: true
 
   autoprefixer:
-    server:
+    style:
       src: '.tmp/styles/**/*.css'
+      options:
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
