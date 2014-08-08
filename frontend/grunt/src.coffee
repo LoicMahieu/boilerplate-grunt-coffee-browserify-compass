@@ -15,7 +15,9 @@ module.exports = (grunt) ->
   browserify:
     options:
       transform: ['coffeeify']
-      browserifyOptions: extensions: '.coffee'
+      browserifyOptions:
+        extensions: '.coffee'
+
     app:
       files:
         '.tmp/scripts/main.js': ['app/scripts/main.coffee']

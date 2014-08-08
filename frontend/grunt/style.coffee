@@ -7,7 +7,7 @@ module.exports = (grunt) ->
   watch:
     style:
       files: ['app/styles/**/*.{scss,sass}']
-      tasks: ['compass:server', 'autoprefixer:server']
+      tasks: ['compass:server', 'autoprefixer:style']
 
   compass:
     options:
@@ -22,6 +22,7 @@ module.exports = (grunt) ->
       httpFontsPath: '../styles/fonts'
       relativeAssets: false
       assetCacheBuster: false
+      importPath: ['node_modules']
     dist:
       options:
         generatedImagesDir: 'dist/images/generated'

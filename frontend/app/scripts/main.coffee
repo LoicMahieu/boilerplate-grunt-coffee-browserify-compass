@@ -1,2 +1,2 @@
 
-require './start'
+require './app'
