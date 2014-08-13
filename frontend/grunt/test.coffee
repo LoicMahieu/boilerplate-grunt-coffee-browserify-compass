@@ -1,9 +1,18 @@
 
-module.exports = (grunt) ->
+path = require 'path'
 
+module.exports = (grunt) ->
   grunt.registerTask 'test', [
     'src-test'
     'karma:unit'
+    'shell:webdriverupdate'
+    'protractor:test'
+  ]
+  grunt.registerTask 'test-unit', ['src-test', 'karma:unit']
+  grunt.registerTask 'test-specs', [
+    'src-test'
+    'shell:webdriverupdate'
+    'protractor:test'
   ]
 
   grunt.registerTask 'serve-coverage', 'connect:coverage'
@@ -48,6 +57,23 @@ module.exports = (grunt) ->
             '.tmp/test/unit/main.js'
           ]
           transform: ['browserify-istanbul']
+
+  protractor:
+    test:
+      options:
+        configFile: 'protractor-conf.js'
+        args:
+          specs: ['.tmp/test/specs/*.js']
+
+  shell:
+    webdriverupdate:
+      command: path.join(
+        __dirname
+        '..'
+        'node_modules/grunt-protractor-runner'
+        'node_modules/protractor'
+        'bin/webdriver-manager update'
+      )
 
   connect:
     coverage:
