@@ -12,7 +12,7 @@ module.exports = (grunt) ->
   watch:
     livereload:
       options:
-        livereload: '<%= connect.options.livereload %>'
+        livereload: '<%= connect.server.options.livereload %>'
       files: [
         'app/*.html',
         '.tmp/styles/{,*/}*.css',

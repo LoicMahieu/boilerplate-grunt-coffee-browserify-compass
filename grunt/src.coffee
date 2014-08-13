@@ -10,12 +10,16 @@ module.exports = (grunt) ->
 
   watch:
     coffee:
-      files: ['Gruntfile.coffee', 'app/scripts/**/*.{coffee,litcoffee,coffee.md}']
+      files: [
+        'Gruntfile.coffee'
+        'app/scripts/**/*.{coffee,litcoffee,coffee.md}'
+      ]
       tasks: ['newer:coffeelint']
 
   coffeelint:
-    app: ['Gruntfile.coffee', 'app/scripts/**/*.{coffee,litcoffee,coffee.md}']
+    app: ['app/scripts/**/*.{coffee,litcoffee,coffee.md}']
     test: ['test/**/*.{coffee,litcoffee,coffee.md}']
+    grunt: ['Gruntfile.coffee', 'grunt/**/*.coffee']
 
   browserify:
     options:

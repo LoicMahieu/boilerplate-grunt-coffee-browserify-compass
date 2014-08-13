@@ -23,6 +23,12 @@ module.exports = (grunt) ->
     test:
       files: ['app/scripts/**/*.coffee']
       tasks: ['test']
+    'test-unit':
+      files: ['test/unit/**/*.coffee']
+      tasks: ['test-unit']
+    'test-specs':
+      files: ['test/specs/**/*.coffee']
+      tasks: ['test-specs']
 
   karma:
     unit:
