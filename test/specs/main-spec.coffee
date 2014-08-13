@@ -1,5 +1,5 @@
 
-describe 'angularjs homepage', ->
+describe 'homepage', ->
   it 'should have a title', ->
-    browser.get('http://juliemr.github.io/protractor-demo/')
-    expect(browser.getTitle()).toEqual('Super Calculator')
+    browser.get('http://localhost:9002/')
+    expect(browser.getTitle()).toEqual('Sample app')

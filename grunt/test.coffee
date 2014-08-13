@@ -6,12 +6,14 @@ module.exports = (grunt) ->
     'src-test'
     'karma:unit'
     'shell:webdriverupdate'
+    'connect:test'
     'protractor:test'
   ]
   grunt.registerTask 'test-unit', ['src-test', 'karma:unit']
   grunt.registerTask 'test-specs', [
     'src-test'
     'shell:webdriverupdate'
+    'connect:test'
     'protractor:test'
   ]
 
@@ -76,10 +78,17 @@ module.exports = (grunt) ->
       )
 
   connect:
+    test:
+      options:
+        port: 9002
+        base: [
+          '.tmp'
+          'test'
+          'app'
+        ]
     coverage:
       options:
         port: 9001
-        livereload: false
         open: true
-        base: 'coverage'
         keepalive: true
+        base: 'coverage'

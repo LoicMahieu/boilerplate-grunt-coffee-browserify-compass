@@ -30,25 +30,13 @@ module.exports = (grunt) ->
     server: ['.tmp']
 
   connect:
-    options:
-      port: 9000
-      livereload: 35729
-      hostname: '0.0.0.0'
     server:
       options:
+        port: 9000
+        livereload: 35729
+        hostname: '0.0.0.0'
         open: true
         base: [
           '.tmp',
           'app'
         ]
-    test:
-      options:
-        base: [
-          '.tmp'
-          'test'
-          'app'
-        ]
-    dist:
-      options:
-        open: true
-        base: 'dist'
