@@ -197,7 +197,8 @@ exports.config =
 
   # Options to be passed to minijasminenode.
   #
-  # See the full list at https://github.com/juliemr/minijasminenode/tree/jasmine1
+  # See the full list at
+  # https://github.com/juliemr/minijasminenode/tree/jasmine1
   jasmineNodeOpts:
 
     # If true, display spec names.

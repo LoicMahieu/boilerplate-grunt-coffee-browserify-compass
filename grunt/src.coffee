@@ -35,7 +35,7 @@ module.exports = (grunt) ->
   coffee:
     test:
       expand: true,
-      cwd: 'app/test',
+      cwd: 'test',
       src: ['**/*.coffee'],
       dest: '.tmp/test',
       ext: '.js'
