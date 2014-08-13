@@ -1,5 +1,4 @@
 
-glob = require 'glob'
 path = require 'path'
 
 require('coffee-script/register')
@@ -11,7 +10,7 @@ module.exports = (grunt) ->
   _ = grunt.util._
 
   loadOptions = (config) ->
-    glob.sync('grunt/**/*.coffee').forEach (v) ->
+    grunt.file.expand('grunt/**/*.coffee').forEach (v) ->
       module = path.join(
         __dirname,
         path.dirname(v),
