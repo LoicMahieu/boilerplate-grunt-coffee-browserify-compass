@@ -61,9 +61,9 @@ module.exports = (grunt) ->
   protractor:
     test:
       options:
-        configFile: 'protractor-conf.js'
+        configFile: '.tmp/test/specs/protractor-conf.js'
         args:
-          specs: ['.tmp/test/specs/*.js']
+          specs: ['.tmp/test/specs/*-spec.js']
 
   shell:
     webdriverupdate:
