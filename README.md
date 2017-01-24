@@ -1,6 +1,8 @@
 grunt-coffee-browserify-angular-compass
 =======================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/LoicMahieu/grunt-coffee-browserify-angular-compass.svg)](https://greenkeeper.io/)
+
 ### Run tests
 
 ```
